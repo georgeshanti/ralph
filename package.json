@@ -7,7 +7,7 @@
         "clean": "rm -rf frontend/build && rm -rf server/static",
         "install": "cd frontend && npm install && cd ../server && npm install",
         "build": "cd frontend && npm run build && cd .. && mkdir -p server/static && cp -R frontend/build/* server/static",
-        "run": "cd server && node . ./config.json"
+        "start": "cd server && node . ./config.json"
     },
     "author": "",
     "license": "ISC",
