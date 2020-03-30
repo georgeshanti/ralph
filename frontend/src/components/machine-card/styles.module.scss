@@ -1,5 +1,70 @@
 .machine-card{
-	padding: 10px;
+	font-family: 'Montserrat';
+	// padding: 15px;
 	display: inline-block;
-	color: red;
+	text-align: left;
+	// padding: 10px;
+	border-style: solid;
+	border-width: 1px;
+	background: white;
+	color: black;
+	border-width: 0px;
+	border-radius: 10px;
+	margin: 5px;
+	box-shadow: 0 0 10px 10px #f0f0f0;
+	overflow: hidden;
+
+	.bottom{
+		padding: 10px;
+
+		.details{
+			display: flex;
+			justify-content: space-between;
+			font-size: 13px;
+			font-family: 'Oxanium';
+
+			.machine-name{
+				display: inline-block;
+			}
+
+			.footer{
+				display: inline-block;
+				justify-content: space-between;
+				font-size: 10px;
+				span{
+					display: inline-block;
+					margin: 0px 2px;
+					vertical-align: middle;
+					
+					&.box{
+						cursor: pointer;
+						margin: 0px;
+						font-size: 8px;
+						color: #3d4147;
+						background: white;
+						padding: 3px;
+						border-style: solid;
+						border-radius: 3px;
+						border-width: 0px;
+					}
+				}
+			}
+		}
+
+		.actions{
+			display: flex;
+			justify-content: space-between;
+			font-size: 13px;
+			font-family: 'Oxanium';
+
+			span{
+				cursor: pointer;
+				font-size: 8px;
+				padding: 2px 10px;
+				border-radius: 2px;
+				color: white;
+				background: orange;
+			}
+		}
+	}
 }

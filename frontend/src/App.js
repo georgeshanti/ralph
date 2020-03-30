@@ -1,10 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-import { ResponsiveLineCanvas } from '@nivo/line'
+import styles from './App.module.scss';
 
 import MachineCard from './components/machine-card/index.js';
+import TaskBar from './components/taskbar/index.js';
 
 class App extends React.Component {
   constructor(props){
@@ -18,18 +16,17 @@ class App extends React.Component {
       return res.json();
     })
     .then((res)=>{
-      console.log(res);
       this.setState({machines: res});
     })
   }
 
   render(){
-    console.log(this.state);
     var machineCards = this.state.machines.map((x, i)=>(<MachineCard config={x} key={i} />));
 
     return (
-      <div className="App">
+      <div className={styles["App"]}>
         {machineCards}
+        <TaskBar />
       </div>
     );
   }

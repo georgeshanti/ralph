@@ -1,0 +1,53 @@
+.terminal-modal-window{
+    min-width: 300px;
+    margin: 0px 2px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+
+    .menu{
+        background: #eaeaea;
+        display: flex;
+        padding: 2px;
+        box-sizing: border-box;
+        width: 300px;
+        height: 30px;
+        font-size: 17px;
+
+        &.open{
+            width: 720px;
+        }
+
+        justify-content: space-between;
+
+        .title{
+            vertical-align: middle;
+        }
+
+        .actions{
+            vertical-align: middle;
+            .action{
+                display: inline-block;
+                cursor: pointer;
+                color: #3d4147;
+                padding: 2px 4px;
+                border-style: solid;
+                border-radius: 3px;
+                border-width: 0px;
+                margin: 0px 1px;
+                
+                &:hover{
+                    background: #d5d5d5;
+                }
+            }
+        }
+    }
+
+    .terminal{
+        width: 500px;
+    }
+
+
+}
