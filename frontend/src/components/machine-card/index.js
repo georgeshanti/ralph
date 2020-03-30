@@ -20,7 +20,7 @@ class MachineCard extends React.Component {
 
 	componentDidMount(){
 		var _this = this;
-		var ws = new WebSocket("ws://127.0.0.1:8081");
+		var ws = new WebSocket("ws://"+window.location.hostname+":8081");
 		ws.onmessage = function(message){
 			var set = _this.state.data
 			var obj = JSON.parse(message.data);

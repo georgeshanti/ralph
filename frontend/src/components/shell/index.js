@@ -19,7 +19,7 @@ class Shell extends React.Component {
 		this.setState({shellVisible: true},()=>{
 			var terminal = new Terminal();
 			terminal.open(this.state.shellRef.current);
-			var ws = new WebSocket("ws://127.0.0.1:8081");
+			var ws = new WebSocket("ws://"+window.location.hostname+":8081");
 			ws.onmessage = function(event){
 				_this.parseSocketMessage(event)
 				.then((result)=>{
