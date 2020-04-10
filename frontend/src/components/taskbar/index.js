@@ -18,7 +18,7 @@ class TaskBar extends React.Component {
         window.addShell = (name)=>{
             var shells = Object.assign(this.state.shells);
             shells.push({
-                name: 'local',
+                name: name,
                 shellRef: React.createRef(), 
                 key: Math.random()*100
             })
