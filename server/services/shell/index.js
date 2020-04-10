@@ -5,8 +5,8 @@ function createShell(path){
 		constructor(connection){
 			this.shell = pty.spawn(path, [], {
 				name: 'xterm-color',
-				cols: 80,
-				rows: 30,
+				cols: 78,
+				rows: 47,
 				cwd: process.env.HOME,
 				env: process.env
 			});

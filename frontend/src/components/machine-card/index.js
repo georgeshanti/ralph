@@ -30,6 +30,7 @@ class MachineCard extends React.Component {
 			_this.setState({data: set, memory: parseFloat(obj['memUsage']).toFixed(0), cpu: val});
 		}
 		ws.onopen = function(){
+			ws.send(JSON.stringify({"service": "gateway"}));
 			ws.send(JSON.stringify({"name": _this.props.config.name}));
 			ws.send(JSON.stringify({"service": "monitor"}));
 		}

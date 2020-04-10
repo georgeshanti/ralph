@@ -1,11 +1,10 @@
 .terminal-modal-window{
     min-width: 300px;
-    margin: 0px 2px;
+    margin: 0px;
     display: inline-block;
     vertical-align: top;
     position: relative;
     top: 100%;
-    transform: translateY(-100%);
 
     .menu{
         background: #eaeaea;
@@ -17,7 +16,7 @@
         font-size: 17px;
 
         &.open{
-            width: 720px;
+            width: 704px;
         }
 
         justify-content: space-between;
@@ -46,7 +45,10 @@
     }
 
     .terminal{
-        width: 500px;
+        background: #151942;
+        color: green;
+        width: 100%;
+        height: calc(100vh - 30px);
     }
 
 

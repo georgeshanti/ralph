@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss'; 
 
 import { Terminal } from 'xterm/lib/xterm';
+import { FitAddon } from 'xterm-addon-fit';
 import 'xterm/css/xterm.css';
 
 class Shell extends React.Component {
@@ -17,8 +18,15 @@ class Shell extends React.Component {
 	componentDidMount(){
 		var _this = this;
 		this.setState({shellVisible: true},()=>{
-			var terminal = new Terminal();
+			var terminal = new Terminal({
+				theme: {
+					background: '#151942'
+				}
+			});
+			var fitAddon = new FitAddon();
+			terminal.loadAddon(fitAddon);
 			terminal.open(this.state.shellRef.current);
+			fitAddon.fit();
 			var ws = new WebSocket("ws://"+window.location.hostname+":8081");
 			ws.onmessage = function(event){
 				_this.parseSocketMessage(event)
@@ -27,6 +35,7 @@ class Shell extends React.Component {
 				})
 			}
 			ws.onopen = function(){
+				ws.send(JSON.stringify({"service": "gateway"}));
 				ws.send(JSON.stringify({"name": _this.props.name}));
 				ws.send(JSON.stringify({"service": "shell"}));
 				terminal.onKey((e)=>{
