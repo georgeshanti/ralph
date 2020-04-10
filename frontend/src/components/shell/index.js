@@ -27,7 +27,11 @@ class Shell extends React.Component {
 			terminal.loadAddon(fitAddon);
 			terminal.open(this.state.shellRef.current);
 			fitAddon.fit();
-			var ws = new WebSocket("ws://"+window.location.hostname+":8081");
+			var protocol = "ws"
+			if (window.location.protocol == "https:") {
+				var protocol = "wss"
+			 }
+			var ws = new WebSocket(protocol+"://"+window.location.hostname+":8081");
 			ws.onmessage = function(event){
 				_this.parseSocketMessage(event)
 				.then((result)=>{
